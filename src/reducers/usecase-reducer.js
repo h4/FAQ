@@ -47,7 +47,7 @@ const usecaseData = {
 }
 
 const initialState = {
-  use_cases: []
+  use_cases: usecaseData
 }
 
 export default function usecaseReducer(state = initialState, action) {

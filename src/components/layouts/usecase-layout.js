@@ -6,17 +6,15 @@ import {connect} from 'react-redux';
 import store from '../../store';
 import {usecaseContainer} from '../../actions/usecase-action';
 
-const mapStateToProps = function (store) {
+const mapStateToProps = function (store, props) {
+  const allUseCases = store.usecaseState.use_cases;
+
   return {
-    use_cases: store.usecaseState.use_cases
+    use_cases: allUseCases[props.name]
   };
 };
 
 class UsecaseLayout extends Component {
-  componentDidMount() {
-    store.dispatch(usecaseContainer(this.props.name));
-  }
-
   render() {
     return (
       <div>
